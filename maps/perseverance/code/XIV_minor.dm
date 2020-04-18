@@ -106,5 +106,8 @@
 /turf/simulated/wall/r_wall/white
 	color = COLOR_WHITE
 
+/turf/simulated/wall/ocp_wall/white
+	paint_color = COLOR_WHITE
+
 /obj/structure/closet/secure_closet/freezer/kitchen/XIV
 	req_access = list()

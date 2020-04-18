@@ -6,6 +6,7 @@
 	#include "XIV_overmap.dm"
 	#include "XIV_unit_testing.dm"
 	#include "XIV_shuttles.dm"
+	#include "XIV_elevators.dm"
 	#include "XIV_ranks.dm"
 	#include "XIV_map_templates.dm"
 	#include "XIV_setup.dm"
