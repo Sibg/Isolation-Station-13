@@ -112,9 +112,9 @@
 /datum/job/doctor/get_description_blurb()
 	return "You are the Doctor, specialized in keeping your fellow cremembers operational. You are subordinate to the Operations Manager and are expected to follow them."
 
-//researcher
-/datum/job/researcher
-	title = "Researcher"
+//fab tech
+/datum/job/fabtec
+	title = "Fabricator Technician"
 	department = "Research"
 	department_flag = SCI
 	total_positions = 2
@@ -126,7 +126,7 @@
 	ideal_character_age = 20
 	alt_titles = list()
 
-	outfit_type = /decl/hierarchy/outfit/job/isolation/researcher
+	outfit_type = /decl/hierarchy/outfit/job/isolation/fabtec
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
 	)
@@ -140,7 +140,7 @@
 	access = list(access_XIV, access_research)
 
 /datum/job/researcher/get_description_blurb()
-	return "You are the Researcher, brought here to find ways to make the miners' lives easier. You are subordinate to the Operations manager and are expected to follow them."
+	return "You are the Fabricator Technician, brought here to find ways to make the miners' lives easier. You are subordinate to the Operations manager and are expected to follow them."
 
 //mechanic
 /datum/job/mechanic

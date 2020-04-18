@@ -40,7 +40,7 @@
 	salary_modifier = 0.4
 
 
-	lobby_screens = list('maps/perseverance/lobby/Kestrel.jpg', 'maps/perseverance/lobby/Kestrelalt.jpg', 'maps/perseverance/lobby/Nessasio.jpg')
+	lobby_screens = list('maps/perseverance/lobby/Menu2.png', 'maps/perseverance/lobby/Menu3.png')
 	lobby_tracks = list(
 		/music_track/torch,
 		/music_track/human,

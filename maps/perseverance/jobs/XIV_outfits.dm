@@ -36,13 +36,12 @@
 	id_type = /obj/item/weapon/card/id/XIV/doctor
 
 //researcher
-/decl/hierarchy/outfit/job/isolation/researcher
-	name = OUTFIT_JOB_NAME("Researcher")
+/decl/hierarchy/outfit/job/isolation/fabtec
+	name = OUTFIT_JOB_NAME("Fabrication Technician")
 	uniform = /obj/item/clothing/under/color/black
 	shoes = /obj/item/clothing/shoes/white
 	glasses = /obj/item/clothing/glasses/science
-	id_type = /obj/item/weapon/card/id/XIV/researcher
-	r_pocket = /obj/item/weapon/gun/energy/confuseray
+	id_type = /obj/item/weapon/card/id/XIV/fabtec
 	shoes = /obj/item/clothing/shoes/white
 
 //miner

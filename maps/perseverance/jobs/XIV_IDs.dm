@@ -24,10 +24,10 @@
 	job_access_type = /datum/job/doctor
 	detail_color = COLOR_PALE_BLUE_GRAY
 
-/obj/item/weapon/card/id/XIV/researcher
+/obj/item/weapon/card/id/XIV/fabtec
 	name = "identification card"
-	desc = "An identification card issued to contracted researchers."
-	job_access_type = /datum/job/researcher
+	desc = "An identification card issued to contracted fabrication technicians."
+	job_access_type = /datum/job/fabtec
 	detail_color = COLOR_RESEARCH
 	color = COLOR_WHITE
 
