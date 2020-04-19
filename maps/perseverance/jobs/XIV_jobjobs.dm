@@ -72,11 +72,11 @@
 	skill_points = 18
 
 /datum/job/doctor/get_description_blurb()
-	return "You are the Navigations Officer, specialized in piloting the craft and operating sensors. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Navigations Officer, specialized in piloting the craft and help the Operations Manager. You are subordinate to the Operations Manager and are expected to follow them."
 
 //doctor
 /datum/job/doctor
-	title = "Medical Officer"
+	title = "Field Medic"
 	department = "Medical"
 	department_flag = MED
 	total_positions = 2
@@ -110,11 +110,11 @@
 	skill_points = 20
 
 /datum/job/doctor/get_description_blurb()
-	return "You are the Doctor, specialized in keeping your fellow cremembers operational. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Field Medic, specialized in keeping your fellow cremembers operational. You are subordinate to the Operations Manager and are expected to follow them."
 
 //fab tech
 /datum/job/fabtec
-	title = "Fabricator Technician"
+	title = "Fabrication Technician"
 	department = "Research"
 	department_flag = SCI
 	total_positions = 2
@@ -122,7 +122,7 @@
 	supervisors = "the Operations manager"
 	selection_color = "#633d63"
 	economic_power = 3
-	skill_points = 25
+	skill_points = 18
 	ideal_character_age = 20
 	alt_titles = list()
 
@@ -139,12 +139,12 @@
 
 	access = list(access_XIV, access_research)
 
-/datum/job/researcher/get_description_blurb()
-	return "You are the Fabricator Technician, brought here to find ways to make the miners' lives easier. You are subordinate to the Operations manager and are expected to follow them."
+/datum/job/fabtec/get_description_blurb()
+	return "You are the Fabrication Technician, hired to operate various fabrication machinery onboard the ship. You are subordinate to the Operations manager and are expected to follow them."
 
 //mechanic
-/datum/job/mechanic
-	title = "Mechanic"
+/datum/job/techie
+	title = "Engineering Technician"
 	department = "Engineering"
 	department_flag = ENG
 	total_positions = 4
@@ -156,7 +156,7 @@
 	alt_titles = list()
 	minimal_player_age = 0
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/isolation/mechanic
+	outfit_type = /decl/hierarchy/outfit/job/isolation/techie
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -186,8 +186,8 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
 
-/datum/job/mechanic/get_description_blurb()
-	return "You are the Ship Mechanic, you're not a not top of the line engineer but you can get the job done. You are subordinate to the Operations Manager and are expected to follow them."
+/datum/job/techie/get_description_blurb()
+	return "You are the Engineeirng Techinican, you're not a not top of the line engineer but you can get the job done. You are subordinate to the Operations Manager and are expected to follow them."
 
 //miner
 /datum/job/assistant
@@ -213,7 +213,7 @@
 	skill_points = 18
 
 /datum/job/assistant/get_description_blurb()
-	return "You are the Miner. You are hired to extract minerals from various asteroids and operate heavy machinery."
+	return "You are the Miner. You are hired to mine, refine and store minerals from various space bodies."
 
 /datum/job/ai
 	minimal_player_age = 7

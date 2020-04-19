@@ -82,7 +82,7 @@
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/eng, 50),
 		/obj/item/weapon/storage/toolbox/mechanical,
 		/obj/item/device/radio/headset/contractor/alt,
-		/obj/item/clothing/suit/storage/hazardvest, //NOTE TO SELF: REPLACE WITH XION UTES WHEN AVAILABLE
+		/obj/item/clothing/under/XIV/xion,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/head/welding,
 		/obj/item/taperoll/engineering
@@ -104,7 +104,7 @@
 // This one is for areas which would be painted over regularly (in view of people, etc.)
 
 /turf/simulated/wall/r_wall/white
-	color = COLOR_WHITE
+	paint_color = COLOR_WHITE
 
 /turf/simulated/wall/ocp_wall/white
 	paint_color = COLOR_WHITE

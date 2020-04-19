@@ -15,7 +15,7 @@
 /obj/item/weapon/card/id/XIV/mechanic
 	name = "identification card"
 	desc = "An identification card issued to contracted mechanics."
-	job_access_type = /datum/job/mechanic
+	job_access_type = /datum/job/techie
 	detail_color = COLOR_SUN
 
 /obj/item/weapon/card/id/XIV/doctor
