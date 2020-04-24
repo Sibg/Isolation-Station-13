@@ -1,9 +1,9 @@
 /obj/effect/overmap/visitable/ship/Perseverance
 	name = "XIV Perseverance"
-	desc = "A bluespace-capable ateroid cracker owned by Xion Industries. This seems to be a converted Apog-class exploration ship."
+	desc = "A very old bluespace capable Apog-class exploration ship with Xion markings. It seems it underwent several major refits."
 	fore_dir = NORTH
-	start_x = 20
-	start_y = 20
+	start_x = 10
+	start_y = 10
 	vessel_mass = 20000
 	burn_delay = 5 SECONDS
 	base = TRUE

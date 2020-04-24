@@ -15,6 +15,9 @@
 	company_name  = "Xion Industries"
 	company_short = "Xion"
 
+	admin_levels = list()
+	empty_levels = list()
+	accessible_z_levels = list("1"=1,"2"=1)
 	overmap_size = 40
 	overmap_event_areas = 30
 	usable_email_tlds = list("freemail.net")

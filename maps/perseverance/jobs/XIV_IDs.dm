@@ -6,16 +6,16 @@
 	extra_details = list("goldstripe")
 	color = "#ccecff"
 
-/obj/item/weapon/card/id/XIV/navigation
+/obj/item/weapon/card/id/XIV/amanager
 	name = "identification card"
-	desc = "An identification card issued to contracted navigation officers."
-	job_access_type = /datum/job/navigation
+	desc = "An identification card issued to contracted Assistant Managers."
+	job_access_type = /datum/job/amanager
 	detail_color = COLOR_COMMAND_BLUE
 
-/obj/item/weapon/card/id/XIV/mechanic
+/obj/item/weapon/card/id/XIV/engineer
 	name = "identification card"
 	desc = "An identification card issued to contracted mechanics."
-	job_access_type = /datum/job/techie
+	job_access_type = /datum/job/engineer
 	detail_color = COLOR_SUN
 
 /obj/item/weapon/card/id/XIV/doctor

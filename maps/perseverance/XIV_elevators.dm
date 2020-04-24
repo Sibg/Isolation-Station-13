@@ -28,5 +28,5 @@
 	name = "Operations Deck"
 	landmark_tag = "nav_cargo_lift_bottom"
 	flags = SLANDMARK_FLAG_AUTOSET
-	base_area = /area/ship/perseverance/chall
+	base_area = /area/ship/perseverance/hall/chall
 	base_turf = /turf/simulated/floor/plating

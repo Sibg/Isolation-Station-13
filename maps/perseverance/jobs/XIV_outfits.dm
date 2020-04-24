@@ -12,25 +12,25 @@
 	id_type = /obj/item/weapon/card/id/XIV/manager
 	r_pocket = /obj/item/weapon/gun/projectile/revolver/holdout
 
-//navigation
-/decl/hierarchy/outfit/job/isolation/navigation
-	name = OUTFIT_JOB_NAME("Navigations Officer")
+//little boss
+/decl/hierarchy/outfit/job/isolation/amanager
+	name = OUTFIT_JOB_NAME("Assistant Manager")
 	uniform = /obj/item/clothing/under/XIV/xionplus
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/XIV/navigation
+	id_type = /obj/item/weapon/card/id/XIV/amanager
 
 //engineer
 /decl/hierarchy/outfit/job/isolation/techie
-	name = OUTFIT_JOB_NAME("Mechanic")
+	name = OUTFIT_JOB_NAME("Engineering Technician")
 	uniform = /obj/item/clothing/under/XIV/xion
 	shoes = /obj/item/clothing/shoes/workboots
-	id_type = /obj/item/weapon/card/id/XIV/mechanic
+	id_type = /obj/item/weapon/card/id/XIV/engineer
 	gloves = /obj/item/clothing/gloves/thick/duty
 	belt = /obj/item/weapon/storage/belt/utility/full/XIV
 
 //doctor
 /decl/hierarchy/outfit/job/isolation/doctor
-	name = OUTFIT_JOB_NAME("Doctor")
+	name = OUTFIT_JOB_NAME("Field Medic")
 	uniform = /obj/item/clothing/under/rank/medical/XIV
 	shoes = /obj/item/clothing/shoes/white
 	id_type = /obj/item/weapon/card/id/XIV/doctor
@@ -45,9 +45,9 @@
 	id_type = /obj/item/weapon/card/id/XIV/fabtec
 	shoes = /obj/item/clothing/shoes/dutyboots
 
-//miner
-/decl/hierarchy/outfit/job/isolation/miner
-	name = OUTFIT_JOB_NAME("Mining Technician")
+//crewman
+/decl/hierarchy/outfit/job/isolation/crewman
+	name = OUTFIT_JOB_NAME("Crewman")
 	uniform = /obj/item/clothing/under/XIV/xion
 	shoes = /obj/item/clothing/shoes/workboots
 	id_type = /obj/item/weapon/card/id/XIV/assistant

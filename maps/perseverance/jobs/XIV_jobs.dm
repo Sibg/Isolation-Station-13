@@ -11,7 +11,7 @@
 		/datum/species/human/mule = list()
 	)
 
-	allowed_jobs = list(/datum/job/manager, /datum/job/navigation, /datum/job/techie, /datum/job/doctor, /datum/job/fabtec
+	allowed_jobs = list(/datum/job/manager, /datum/job/amanager, /datum/job/techie, /datum/job/doctor, /datum/job/fabtec
 						) //this actually also sets in what order the jobs show on the occupation screen, neat, assistant is an exception though
 
 	access_modify_region = list(

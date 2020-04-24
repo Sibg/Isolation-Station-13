@@ -1,3 +1,5 @@
+// Loadout uses datum/job/... to do permission checks, keep an eye out on that!
+
 //big boss
 /datum/job/manager
 	title = "Operations Manager"
@@ -12,7 +14,7 @@
 	alt_titles = list()
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/isolation/manager
-	access = list(access_XIV, access_engine, access_bridge, access_security, access_medical, access_change_ids, access_engine_equip, access_brig)
+	access = list(access_XIV, access_engine, access_bridge, access_medical, access_change_ids, access_engine_equip, access_tcomsat, access_network)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -38,9 +40,9 @@
 	captain_announcement.Announce("All hands, [alt_title || title] [person.real_name] on deck!", new_sound = announce_sound)
 	..()
 
-//navigations officer
-/datum/job/navigation
-	title = "Navigations Officer"
+//assistant manager
+/datum/job/amanager
+	title = "Assistant Manager"
 	department = "Command"
 	department_flag = COM
 	selection_color = "#2f2f7f"
@@ -52,7 +54,7 @@
 	alt_titles = list()
 	ideal_character_age = 24
 	minimal_player_age = 0
-	outfit_type = /decl/hierarchy/outfit/job/isolation/navigation
+	outfit_type = /decl/hierarchy/outfit/job/isolation/amanager
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -64,7 +66,7 @@
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
 
-	access = list(access_XIV, access_bridge)
+	access = list(access_XIV, access_bridge, access_medical, access_engine_equip, access_tcomsat, access_network, access_engine)
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -72,15 +74,15 @@
 	skill_points = 18
 
 /datum/job/doctor/get_description_blurb()
-	return "You are the Navigations Officer, specialized in piloting the craft and help the Operations Manager. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Assistant manager, specialized helping the Operations Manager with whatever needs doing. You are subordinate to the Operations Manager and are expected to follow them."
 
 //doctor
 /datum/job/doctor
 	title = "Field Medic"
 	department = "Medical"
 	department_flag = MED
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	hud_icon = "hudmedicaldoctor"
 	supervisors = "the Operations manager"
 	economic_power = 2
@@ -142,13 +144,13 @@
 /datum/job/fabtec/get_description_blurb()
 	return "You are the Fabrication Technician, hired to operate various fabrication machinery onboard the ship. You are subordinate to the Operations manager and are expected to follow them."
 
-//mechanic
-/datum/job/techie
+//Engineer
+/datum/job/engineer
 	title = "Engineering Technician"
 	department = "Engineering"
 	department_flag = ENG
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 6
+	spawn_positions = 6
 	hud_icon = "hudengineer"
 	supervisors = "the Operations Manager"
 	selection_color = COLOR_DARK_BROWN
@@ -176,7 +178,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 18
 
-	access = list(access_XIV, access_engine_equip)
+	access = list(access_XIV, access_engine_equip, access_tcomsat, access_network, access_engine)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -187,18 +189,18 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/techie/get_description_blurb()
-	return "You are the Engineeirng Techinican, you're not a not top of the line engineer but you can get the job done. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Engineeirng Techinican, you're not the best of the best but you can get the job done. You are subordinate to the Operations Manager and are expected to follow them."
 
-//miner
+//explorer
 /datum/job/assistant
-	title = "Mining Technician"
+	title = "Crewman"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "the Operations Manager"
 	economic_power = 1
 	ideal_character_age = 24
 	minimal_player_age = 0
-	outfit_type = /decl/hierarchy/outfit/job/isolation/miner
+	outfit_type = /decl/hierarchy/outfit/job/isolation/crewman
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -210,10 +212,10 @@
 	access = list(access_XIV)
 	minimal_access = list()
 
-	skill_points = 18
+	skill_points = 15
 
 /datum/job/assistant/get_description_blurb()
-	return "You are the Miner. You are hired to mine, refine and store minerals from various space bodies."
+	return "You are the Crewman, your job is to aid other emplyees in whatever way you can. You are subordinate to the Operations Manager and are expected to follow them."
 
 /datum/job/ai
 	minimal_player_age = 7

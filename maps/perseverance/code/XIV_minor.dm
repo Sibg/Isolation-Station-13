@@ -18,8 +18,9 @@
 /obj/machinery/door/airlock/autoname/weapons
 	stripe_color = COLOR_RED
 
-/obj/machinery/computer
-	icon = 'maps/perseverance/icons/obj/computer.dmi'
+///obj/machinery/computer
+//	icon = 'maps/perseverance/icons/obj/computer.dmi'
+// uncomment once derp does the sprites
 
 /obj/item/device/radio/headset/contractor/alt
 	name = "contractor headset"
@@ -56,7 +57,7 @@
 	icon = 'maps/perseverance/icons/obj/multitool.dmi'
 	icon_state = "multitool"
 
-// The ship's been out of power for a bit, these are fairly good at showcasing that
+// The ship has (furure code) been out of power for a bit, these are fairly good at showcasing that
 
 /obj/item/weapon/cell/apc/empty
 	charge = 0
@@ -70,23 +71,8 @@
 /obj/machinery/power/apc/XIV/low
 	cell_type = /obj/item/weapon/cell/apc/low
 
-/obj/structure/closet/secure_closet/engineering_personal/XIV
-	name = "mechanic's locker"
-	req_access = list(access_engine_equip)
-	closet_appearance = /decl/closet_appearance/secure_closet/engineering
-
-/obj/structure/closet/secure_closet/engineering_personal/XIV/WillContain()
-	return list(
-		new/datum/atom_creator/weighted(list(/obj/item/clothing/accessory/storage/brown_vest = 70, /obj/item/clothing/accessory/storage/webbing = 30)),
-		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
-		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/eng, 50),
-		/obj/item/weapon/storage/toolbox/mechanical,
-		/obj/item/device/radio/headset/contractor/alt,
-		/obj/item/clothing/under/XIV/xion,
-		/obj/item/clothing/mask/gas/half,
-		/obj/item/clothing/head/welding,
-		/obj/item/taperoll/engineering
-	)
+/obj/machinery/power/apc/high/empty
+	cell_type = /obj/item/weapon/cell/high/empty
 
 /obj/structure/wall_frame/hull/white
 	paint_color = COLOR_WHITE
@@ -106,8 +92,52 @@
 /turf/simulated/wall/r_wall/white
 	paint_color = COLOR_WHITE
 
-/turf/simulated/wall/ocp_wall/white
-	paint_color = COLOR_WHITE
+/turf/simulated/wall/r_wall/orange //for fuel tanks
+	paint_color = COLOR_DARK_ORANGE
 
-/obj/structure/closet/secure_closet/freezer/kitchen/XIV
+/turf/simulated/wall/ocp_wall/orange
+	paint_color = COLOR_DARK_ORANGE
+
+/obj/structure/closet/secure_closet/freezer/kitchen/XIV //really? REALLY? COME ON REALLY???
 	req_access = list()
+
+// This is for the multi-z gas tanks
+
+/turf/simulated/open/XIV/airmix
+	initial_gas = list(GAS_OXYGEN = MOLES_O2ATMOS, GAS_NITROGEN = MOLES_N2ATMOS)
+
+/turf/simulated/open/XIV/hydrogen
+	initial_gas = list(GAS_HYDROGEN = ATMOSTANK_HYDROGEN)
+
+/turf/simulated/open/XIV/oxygen
+	initial_gas = list(GAS_OXYGEN = ATMOSTANK_OXYGEN)
+
+/turf/simulated/open/XIV/carbon_dioxide
+	initial_gas = list(GAS_CO2 = ATMOSTANK_CO2)
+
+/turf/simulated/open/XIV/airless //for the aft fuel bay
+	initial_gas = null
+
+//SMES
+
+// Main Engine output SMES, it's empty
+/obj/machinery/power/smes/buildable/preset/XIV/engine_main
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
+		/obj/item/weapon/stock_parts/smes_coil/super_capacity =	 1)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
+
+/obj/machinery/power/smes/buildable/preset/XIV/engine_main/empty
+	_fully_charged = FALSE
+
+// Main Engine internal SMES, for powering the gyrotron and the actual room, doesn't need super high capacity or I/O
+/obj/machinery/power/smes/buildable/preset/XIV/engine_main
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE

@@ -10,13 +10,12 @@
 	worn_state = "xionsuit_s"
 	siemens_coefficient = 0.8
 	armor = list(
-		energy = ARMOR_ENERGY_SMALL,
 		rad = ARMOR_RAD_MINOR
 		)
 
 /obj/item/clothing/under/XIV/xionplus
-	name = "manager's jumpsuit"
-	desc = "A special jumpsuit given to higher-ranking xion employees."
+	name = "xion padded suit"
+	desc = "A special suit given to higher-ranking xion employees."
 	icon = 'maps/perseverance/icons/clothes/XIVunder.dmi'
 	icon_state = "manage"
 	item_state = "manage"
