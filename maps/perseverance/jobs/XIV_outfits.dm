@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/job/isolation
-	l_ear = /obj/item/device/radio/headset/contractor/alt
+	l_ear = /obj/item/device/radio/headset/contractor
 	flags = OUTFIT_HAS_BACKPACK
 	pda_slot = slot_l_store
 	pda_type = /obj/item/device/radio //WE ARE POOR OKAY?

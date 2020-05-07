@@ -155,7 +155,7 @@
 	supervisors = "the Operations Manager"
 	selection_color = COLOR_DARK_BROWN
 	economic_power = 2
-	alt_titles = list()
+	alt_titles = list("Senior Engineer")
 	minimal_player_age = 0
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/isolation/techie

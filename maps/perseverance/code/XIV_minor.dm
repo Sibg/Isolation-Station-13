@@ -9,6 +9,9 @@
 /obj/machinery/door/airlock/autoname/engineering
 	stripe_color = COLOR_AMBER
 
+/obj/machinery/door/airlock/autoname/atmos
+	stripe_color = COLOR_CYAN
+
 /obj/machinery/door/airlock/autoname/command
 	stripe_color = COLOR_COMMAND_BLUE
 
@@ -22,7 +25,7 @@
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
 // uncomment once derp does the sprites
 
-/obj/item/device/radio/headset/contractor/alt
+/obj/item/device/radio/headset/contractor
 	name = "contractor headset"
 	desc = "A headset often used by contractors on ships where having a full communications system is simply too expensive."
 	item_state = "cargo_headset" //not alt headset sprite because they look bad on other species
@@ -74,11 +77,22 @@
 /obj/machinery/power/apc/high/empty
 	cell_type = /obj/item/weapon/cell/high/empty
 
+// Need these for wallframe spawners
+
 /obj/structure/wall_frame/hull/white
 	paint_color = COLOR_WHITE
 
-// Setting these two up as hull should make them do the special space-facing decay effet. Addendum: it does! It actually does! Seems to work on area check, which makes sense
+/obj/structure/wall_frame/orange
+	paint_color = COLOR_DARK_ORANGE
 
+// For the fuel bay
+
+/obj/effect/wallframe_spawn/reinforced/orange
+	name = "white reinforced wall frame window spawner"
+	icon_state = "r-wingrille"
+	frame_path = /obj/structure/wall_frame/orange
+
+// Setting these two up as hull should make them do the special space-facing decay effet. Addendum: it does! It actually does! Seems to work on area check
 /obj/effect/wallframe_spawn/reinforced/hull/white
 	name = "white reinforced wall frame window spawner"
 	icon_state = "r-wingrille"
@@ -141,3 +155,18 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+// Autoname multitile glass airlocks
+/obj/machinery/door/airlock/multi_tile/glass/autoname
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/New()
+	var/area/A = get_area(src)
+	name = A.name
+	..()
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/engineering
+	door_color = COLOR_AMBER
+	stripe_color = COLOR_RED
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/atmos
+	stripe_color = COLOR_CYAN
