@@ -1,4 +1,4 @@
-// Loadout uses datum/job/... to do permission checks, keep an eye out on that!
+// Loadout uses datum/job/... to do permission checks, keep an eye out on that! Some accesses are also needed for NTnet programs
 
 //big boss
 /datum/job/manager
@@ -178,7 +178,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 18
 
-	access = list(access_XIV, access_engine_equip, access_tcomsat, access_network, access_engine)
+	access = list(access_XIV, access_engine_equip, access_tcomsat, access_network, access_engine, access_atmospherics)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -186,7 +186,8 @@
 							 /datum/computer_file/program/atmos_control,
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
-							 /datum/computer_file/program/shields_monitor)
+							 /datum/computer_file/program/shields_monitor,
+							 /datum/computer_file/program/ntnetmonitor)
 
 /datum/job/techie/get_description_blurb()
 	return "You are the Engineeirng Techinican, you're not the best of the best but you can get the job done. You are subordinate to the Operations Manager and are expected to follow them."

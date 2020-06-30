@@ -21,6 +21,21 @@
 /obj/machinery/door/airlock/autoname/weapons
 	stripe_color = COLOR_RED
 
+// Autoname multitile glass airlocks
+/obj/machinery/door/airlock/multi_tile/glass/autoname
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/New()
+	var/area/A = get_area(src)
+	name = A.name
+	..()
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/engineering
+	door_color = COLOR_AMBER
+	stripe_color = COLOR_RED
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/atmos
+	stripe_color = COLOR_CYAN // I kinda like this atmos, I dunno, might just change it later
+
 ///obj/machinery/computer
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
 // uncomment once derp does the sprites
@@ -112,6 +127,12 @@
 /turf/simulated/wall/ocp_wall/orange
 	paint_color = COLOR_DARK_ORANGE
 
+/turf/simulated/wall/ocp_wall/hull
+	paint_color = COLOR_HULL
+
+/turf/simulated/wall/ocp_wall/prepainted
+	paint_color = COLOR_GUNMETAL
+
 /obj/structure/closet/secure_closet/freezer/kitchen/XIV //really? REALLY? COME ON REALLY???
 	req_access = list()
 
@@ -155,18 +176,3 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
-
-// Autoname multitile glass airlocks
-/obj/machinery/door/airlock/multi_tile/glass/autoname
-
-/obj/machinery/door/airlock/multi_tile/glass/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
-
-/obj/machinery/door/airlock/multi_tile/glass/autoname/engineering
-	door_color = COLOR_AMBER
-	stripe_color = COLOR_RED
-
-/obj/machinery/door/airlock/multi_tile/glass/autoname/atmos
-	stripe_color = COLOR_CYAN
