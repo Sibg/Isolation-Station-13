@@ -36,6 +36,9 @@
 /obj/machinery/door/airlock/multi_tile/glass/autoname/atmos
 	stripe_color = COLOR_CYAN // I kinda like this atmos, I dunno, might just change it later
 
+/obj/machinery/door/airlock/multi_tile/glass/autoname/civilian
+	stripe_color = COLOR_CIVIE_GREEN
+
 ///obj/machinery/computer
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
 // uncomment once derp does the sprites
@@ -69,6 +72,9 @@
 	update_icon()
 
 /obj/machinery/suit_cycler/mining/XIV
+	req_access = list()
+
+/obj/machinery/suit_cycler/engineering/alt/XIV
 	req_access = list()
 
 /obj/item/device/multitool
@@ -155,7 +161,7 @@
 
 //SMES
 
-// Main Engine output SMES, it's empty
+// Main Engine output SMES, plus empty version
 /obj/machinery/power/smes/buildable/preset/XIV/engine_main
 	uncreated_component_parts = list(
 		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
@@ -170,7 +176,7 @@
 	_fully_charged = FALSE
 
 // Main Engine internal SMES, for powering the gyrotron and the actual room, doesn't need super high capacity or I/O
-/obj/machinery/power/smes/buildable/preset/XIV/engine_main
+/obj/machinery/power/smes/buildable/preset/XIV/engine_central
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
