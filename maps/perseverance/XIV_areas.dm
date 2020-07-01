@@ -36,10 +36,15 @@
 	icon_state = "cafeteria"
 	sound_env = SMALL_ENCLOSED
 
-/area/ship/perseverance/medbay
-	name = "\improper Perseverance Medical Bay"
+/area/ship/perseverance/infirmary
+	name = "\improper Perseverance Infirmary"
 	icon_state = "medbay"
 	req_access = list(access_XIV, access_medical)
+	sound_env = SMALL_ENCLOSED
+
+/area/ship/perseverance/bathroom
+	name = "\improper Perseverance Bathroom"
+	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
 
 //engineering
