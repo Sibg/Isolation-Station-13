@@ -134,6 +134,7 @@
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
 	#include "loadout/loadout_shoes.dm"
+	#include "loadout/loadout_storage.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"
@@ -168,6 +169,7 @@
 	#include "../away/voxship/voxship.dm"
 	#include "../away/skrellscoutship/skrellscoutship.dm"
 	#include "../away/meatstation/meatstation.dm"
+	#include "../away/miningstation/miningstation.dm"
 
 	#include "../../code/datums/music_tracks/chasing_time.dm"
 

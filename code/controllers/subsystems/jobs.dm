@@ -470,13 +470,19 @@ SUBSYSTEM_DEF(jobs)
 		// EMAIL GENERATION
 		if(rank != "Robot" && rank != "AI")		//These guys get their emails later.
 			var/domain
+			var/addr = H.real_name
+			var/pass
 			if(H.char_branch)
 				if(H.char_branch.email_domain)
 					domain = H.char_branch.email_domain
+				if (H.char_branch.allow_custom_email && H.client.prefs.email_addr)
+					addr = H.client.prefs.email_addr
 			else
 				domain = "freemail.net"
+			if (H.client.prefs.email_pass)
+				pass = H.client.prefs.email_pass
 			if(domain)
-				ntnet_global.create_email(H, H.real_name, domain, rank)
+				ntnet_global.create_email(H, addr, domain, rank, pass)
 		// END EMAIL GENERATION
 
 		job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
@@ -485,7 +491,7 @@ SUBSYSTEM_DEF(jobs)
 
 		var/obj/item/clothing/under/uniform = H.w_uniform
 		if(istype(uniform) && uniform.has_sensor)
-			uniform.sensor_mode = H.client.prefs.sensor_setting
+			uniform.sensor_mode = SUIT_SENSOR_MODES[H.client.prefs.sensor_setting]
 			if(H.client.prefs.sensors_locked)
 				uniform.has_sensor = SUIT_LOCKED_SENSORS
 	else

@@ -239,7 +239,6 @@ BLIND     // can't see anything
 		return item_state_slots[slot]
 	else
 		return icon_state
-	return ..()
 
 /obj/item/clothing/glasses/update_clothing_icon()
 	if (ismob(src.loc))
@@ -619,7 +618,6 @@ BLIND     // can't see anything
 	else
 		add_hidden(I, user)
 		return
-	..()
 
 /obj/item/clothing/shoes/proc/add_cuffs(var/obj/item/weapon/handcuffs/cuffs, var/mob/user)
 	if (!can_add_cuffs)
@@ -940,12 +938,13 @@ BLIND     // can't see anything
 		to_chat(user, "This suit does not have any sensors.")
 		return 0
 
-	var/list/modes = list("Off", "Binary sensors", "Vitals tracker", "Tracking beacon")
-	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
+	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", get_key_by_index(SUIT_SENSOR_MODES, sensor_mode + 1)) as null | anything in SUIT_SENSOR_MODES
+	if(!switchMode)
+		return
 	if(get_dist(user, src) > 1)
 		to_chat(user, "You have moved too far away.")
 		return
-	sensor_mode = modes.Find(switchMode) - 1
+	sensor_mode = SUIT_SENSOR_MODES[switchMode]
 
 	if (src.loc == user)
 		switch(sensor_mode)
@@ -1035,7 +1034,7 @@ BLIND     // can't see anything
 	update_clothing_icon()
 
 /obj/item/clothing/under/rank/New()
-	sensor_mode = pick(0,1,2,3)
+	sensor_mode = pick(list_values(SUIT_SENSOR_MODES))
 	..()
 
 /obj/item/clothing/under/AltClick(var/mob/user)
@@ -1053,3 +1052,9 @@ BLIND     // can't see anything
 	gender = NEUTER
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	var/undergloves = 1
+
+
+/obj/item/clothing/get_pressure_weakness(pressure,zone)
+	. = ..()
+	for(var/obj/item/clothing/accessory/A in accessories)
+		. = min(., A.get_pressure_weakness(pressure,zone))
