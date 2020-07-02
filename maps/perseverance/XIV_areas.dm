@@ -39,7 +39,7 @@
 /area/ship/perseverance/infirmary
 	name = "\improper Perseverance Infirmary"
 	icon_state = "medbay"
-	req_access = list(access_XIV, access_medical)
+	req_access = list(access_XIV)
 	sound_env = SMALL_ENCLOSED
 
 /area/ship/perseverance/bathroom
