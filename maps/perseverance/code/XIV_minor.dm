@@ -39,6 +39,10 @@
 /obj/machinery/door/airlock/multi_tile/glass/autoname/civilian
 	stripe_color = COLOR_CIVIE_GREEN
 
+/obj/machinery/door/airlock/multi_tile/glass/autoname/medical
+	door_color = COLOR_WHITE
+	stripe_color = COLOR_DEEP_SKY_BLUE
+
 ///obj/machinery/computer
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
 // uncomment once derp does the sprites
