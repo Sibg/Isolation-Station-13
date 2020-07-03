@@ -21,6 +21,10 @@
 /obj/machinery/door/airlock/autoname/weapons
 	stripe_color = COLOR_RED
 
+/obj/machinery/door/airlock/autoname/supply
+	door_color = COLOR_PALE_ORANGE
+	stripe_color = COLOR_BEASTY_BROWN
+
 // Autoname multitile glass airlocks
 /obj/machinery/door/airlock/multi_tile/glass/autoname
 
@@ -42,6 +46,10 @@
 /obj/machinery/door/airlock/multi_tile/glass/autoname/medical
 	door_color = COLOR_WHITE
 	stripe_color = COLOR_DEEP_SKY_BLUE
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/supply
+	door_color = COLOR_PALE_ORANGE
+	stripe_color = COLOR_BEASTY_BROWN
 
 ///obj/machinery/computer
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
