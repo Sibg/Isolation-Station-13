@@ -25,6 +25,10 @@
 	door_color = COLOR_PALE_ORANGE
 	stripe_color = COLOR_BEASTY_BROWN
 
+/obj/machinery/door/airlock/hatch/ventilation
+	name = "Ventilation Hatch"
+	stripe_color = COLOR_ORANGE
+
 // Autoname multitile glass airlocks
 /obj/machinery/door/airlock/multi_tile/glass/autoname
 
@@ -194,3 +198,13 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+//Crate
+/obj/structure/closet/crate/actual_radiation_gear
+	name = "radioactive gear crate"
+	desc = "A crate with a radiation sign on it."
+	closet_appearance = /decl/closet_appearance/crate/radiation
+
+/obj/structure/closet/crate/actual_radiation_gear/WillContain()
+	return list(/obj/item/clothing/suit/radiation = 4,
+				/obj/item/clothing/head/radiation = 4) //other radiation closet only gives the suit ??? What???

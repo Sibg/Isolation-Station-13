@@ -22,6 +22,16 @@
 	icon_state = "shuttlered"
 	sound_env = SMALL_ENCLOSED
 
+/area/ship/perseverance/englift
+	name = "\improper Perseverance Engineering Elevator"
+	icon_state = "shuttlered"
+	sound_env = SMALL_ENCLOSED
+
+/area/ship/perseverance/englifttop
+	name = "\improper Perseverance Engineering Elevator shaft"
+	icon_state = "shuttlered"
+	sound_env = SMALL_ENCLOSED
+
 //rooms
 
 /area/ship/perseverance/cryos
