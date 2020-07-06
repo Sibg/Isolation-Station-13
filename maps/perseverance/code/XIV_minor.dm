@@ -191,15 +191,18 @@
 /obj/machinery/power/smes/buildable/preset/XIV/engine_main/empty
 	_fully_charged = FALSE
 
-// Main Engine internal SMES, for powering the gyrotron and the actual room, doesn't need super high capacity or I/O
+// Main Engine internal SMES, for powering the gyrotron and the actual room, doesn't need super high capacity, but it does need I/O
 /obj/machinery/power/smes/buildable/preset/XIV/engine_central
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/smes_coil/super_io = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
 
-//Crate
+//Crates
+
 /obj/structure/closet/crate/actual_radiation_gear
 	name = "radioactive gear crate"
 	desc = "A crate with a radiation sign on it."
@@ -208,3 +211,16 @@
 /obj/structure/closet/crate/actual_radiation_gear/WillContain()
 	return list(/obj/item/clothing/suit/radiation = 4,
 				/obj/item/clothing/head/radiation = 4) //other radiation closet only gives the suit ??? What???
+
+//!!VENTS!!
+
+/obj/structure/ladder/vent
+	name = "vent"
+	desc = "It's a vent. Watch your step."
+	icon = 'maps/perseverance/icons/vent.dmi'
+	icon_state = "ladder10" //it's called ladder10 because the vent/up version autosets itself to ladder10 anyway and I can't fix it... Yet.
+
+/obj/structure/ladder/vent/up
+	desc = "It's a vent. Really dark up there..."
+	allowed_directions = UP
+	alpha = 180
