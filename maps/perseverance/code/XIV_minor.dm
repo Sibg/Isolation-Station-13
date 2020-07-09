@@ -211,16 +211,3 @@
 /obj/structure/closet/crate/actual_radiation_gear/WillContain()
 	return list(/obj/item/clothing/suit/radiation = 4,
 				/obj/item/clothing/head/radiation = 4) //other radiation closet only gives the suit ??? What???
-
-//!!VENTS!!
-
-/obj/structure/ladder/vent
-	name = "vent"
-	desc = "It's a vent. Watch your step."
-	icon = 'maps/perseverance/icons/vent.dmi'
-	icon_state = "ladder10" //it's called ladder10 because the vent/up version autosets itself to ladder10 anyway and I can't fix it... Yet.
-
-/obj/structure/ladder/vent/up
-	desc = "It's a vent. Really dark up there..."
-	allowed_directions = UP
-	alpha = 180

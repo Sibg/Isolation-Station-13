@@ -20,7 +20,7 @@
 	icon_state = "manage"
 	item_state = "manage"
 	worn_state = "manage"
-	gender_icons = 1
+	gender_icons = 0
 	armor = list(
 		energy = ARMOR_ENERGY_SMALL,
 		rad = ARMOR_RAD_MINOR,

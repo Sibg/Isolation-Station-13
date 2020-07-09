@@ -17,6 +17,7 @@
 	#include "code/XIV_minor.dm"
 	#include "code/XIV_clothes.dm"
 	#include "code/XIV_atmos.dm"
+	#include "code/XIV_vent.dm"
 
 	#include "Perseverance_1.dmm"
 	#include "Perseverance_2.dmm"
