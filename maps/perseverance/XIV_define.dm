@@ -43,8 +43,8 @@
 	salary_modifier = 0.4
 
 
-//Images 2-5 are from starsector, image 1 I have no idea, couldn't really find the original author, just a lot of very different names :I
-	lobby_screens = list('maps/perseverance/lobby/Menu1.png', 'maps/perseverance/lobby/Menu2.jpg', 'maps/perseverance/lobby/Menu3.jpg', 'maps/perseverance/lobby/Menu4.jpg', 'maps/perseverance/lobby/Menu5.jpg')
+//Images 2-4 are from starsector, image 1 I have no idea, couldn't really find who made it :I
+	lobby_screens = list('maps/perseverance/lobby/Menu1.png', 'maps/perseverance/lobby/Menu2.jpg', 'maps/perseverance/lobby/Menu3.jpg', 'maps/perseverance/lobby/Menu4.jpg')
 	lobby_tracks = list(
 		/music_track/torch,
 		/music_track/human,

@@ -10,10 +10,11 @@
 	stripe_color = COLOR_AMBER
 
 /obj/machinery/door/airlock/autoname/atmos
+	door_color = COLOR_AMBER
 	stripe_color = COLOR_CYAN
 
 /obj/machinery/door/airlock/autoname/command
-	stripe_color = COLOR_COMMAND_BLUE
+	door_color = COLOR_COMMAND_BLUE
 
 /obj/machinery/door/airlock/autoname/civilian
 	stripe_color = COLOR_CIVIE_GREEN
@@ -42,7 +43,8 @@
 	stripe_color = COLOR_RED
 
 /obj/machinery/door/airlock/multi_tile/glass/autoname/atmos
-	stripe_color = COLOR_CYAN // I kinda like this atmos, I dunno, might just change it later
+	door_color = COLOR_AMBER
+	stripe_color = COLOR_CYAN
 
 /obj/machinery/door/airlock/multi_tile/glass/autoname/civilian
 	stripe_color = COLOR_CIVIE_GREEN
@@ -54,6 +56,10 @@
 /obj/machinery/door/airlock/multi_tile/glass/autoname/supply
 	door_color = COLOR_PALE_ORANGE
 	stripe_color = COLOR_BEASTY_BROWN
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/command
+	door_color = COLOR_COMMAND_BLUE
+	stripe_color = COLOR_SKY_BLUE
 
 ///obj/machinery/computer
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
@@ -140,6 +146,15 @@
 
 // This one is for areas which would be painted over regularly (in view of people, etc.)
 
+/turf/simulated/wall/prepainted/white
+	paint_color = COLOR_WHITE
+
+/turf/simulated/wall/prepainted/hull
+	paint_color = COLOR_HULL
+
+/turf/simulated/wall/titanium/hull
+	paint_color = COLOR_HULL
+
 /turf/simulated/wall/r_wall/white
 	paint_color = COLOR_WHITE
 
@@ -211,3 +226,21 @@
 /obj/structure/closet/crate/actual_radiation_gear/WillContain()
 	return list(/obj/item/clothing/suit/radiation = 4,
 				/obj/item/clothing/head/radiation = 4) //other radiation closet only gives the suit ??? What???
+
+/obj/structure/closet/crate/fusion
+	name = "fusion fuel crate"
+	desc = "A crate with a radiation sign on it."
+	closet_appearance = /decl/closet_appearance/crate/radiation
+
+/obj/item/stack/material/deuterium/ten //needed for next part
+	amount = 10
+
+/obj/structure/closet/crate/fusion/WillContain()
+	return list(/obj/item/stack/material/deuterium/ten = 10,
+				/obj/item/stack/material/tritium/ten = 4)
+
+//Blue double emergency tank
+
+/obj/item/weapon/tank/emergency/oxygen/double/blue
+	icon = 'maps/perseverance/icons/obj/tanks.dmi'
+	icon_state = "emergency_double_blue"

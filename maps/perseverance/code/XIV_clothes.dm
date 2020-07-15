@@ -20,7 +20,7 @@
 	icon_state = "manage"
 	item_state = "manage"
 	worn_state = "manage"
-	gender_icons = 0
+	gender_icons = 1
 	armor = list(
 		energy = ARMOR_ENERGY_SMALL,
 		rad = ARMOR_RAD_MINOR,
@@ -30,6 +30,3 @@
 
 /obj/item/clothing/under/rank/medical/XIV
 	name = "field medic's jumpsuit"
-
-/obj/item/clothing/under/rank/scientist_new/XIV
-	name = "fabrication tech's jumpsuit"

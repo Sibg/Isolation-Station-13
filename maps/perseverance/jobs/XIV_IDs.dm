@@ -1,6 +1,6 @@
 /obj/item/weapon/card/id/XIV/manager
 	name = "identification card"
-	desc = "An identification card issued to the Operations Manager."
+	desc = "An identification card issued to the Expedition leader."
 	job_access_type = /datum/job/manager
 	item_state = "silver_id"
 	extra_details = list("goldstripe")
@@ -27,7 +27,7 @@
 /obj/item/weapon/card/id/XIV/fabtec
 	name = "identification card"
 	desc = "An identification card issued to contracted fabrication technicians."
-	job_access_type = /datum/job/fabtec
+	job_access_type = /datum/job/science
 	detail_color = COLOR_RESEARCH
 	color = COLOR_WHITE
 

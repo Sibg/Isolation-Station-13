@@ -6,7 +6,7 @@
 
 //big boss
 /decl/hierarchy/outfit/job/isolation/manager
-	name = OUTFIT_JOB_NAME("Operations Manager")
+	name = OUTFIT_JOB_NAME("Expedition Leader")
 	uniform = /obj/item/clothing/under/XIV/xionplus
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/weapon/card/id/XIV/manager
@@ -36,9 +36,9 @@
 	id_type = /obj/item/weapon/card/id/XIV/doctor
 
 //fabtec
-/decl/hierarchy/outfit/job/isolation/fabtec
-	name = OUTFIT_JOB_NAME("Fabrication Technician")
-	uniform = /obj/item/clothing/under/rank/scientist_new/XIV
+/decl/hierarchy/outfit/job/isolation/science
+	name = OUTFIT_JOB_NAME("Perseverance Scientist")
+	uniform = /obj/item/clothing/under/rank/scientist_new
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/white
 	glasses = /obj/item/clothing/glasses/science
@@ -47,7 +47,7 @@
 
 //crewman
 /decl/hierarchy/outfit/job/isolation/crewman
-	name = OUTFIT_JOB_NAME("Crewman")
+	name = OUTFIT_JOB_NAME("Perseverance Crewman")
 	uniform = /obj/item/clothing/under/XIV/xion
 	shoes = /obj/item/clothing/shoes/workboots
 	id_type = /obj/item/weapon/card/id/XIV/assistant

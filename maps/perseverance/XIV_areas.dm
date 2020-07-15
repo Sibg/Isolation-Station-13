@@ -71,6 +71,11 @@
 	icon_state = "storage"
 	sound_env = SMALL_ENCLOSED
 
+/area/ship/perseverance/cpod
+	name = "\improper Perseverance Cargo Pod"
+	icon_state = "shuttle"
+	sound_env = SMALL_ENCLOSED
+
 //cargo bay
 
 /area/ship/perseverance/cargobay/fore
@@ -113,19 +118,27 @@
 /area/ship/perseverance/hall/chall
 	name = "\improper Perseverance Central Hallway"
 	icon_state = "hallC3"
-	sound_env = SMALL_ENCLOSED
+	sound_env = LARGE_ENCLOSED
 
 /area/ship/perseverance/hall/phall
 	name = "\improper Perseverance Port Hallway"
 	icon_state = "hallF"
-	sound_env = SMALL_ENCLOSED
+	sound_env = LARGE_ENCLOSED
 
 /area/ship/perseverance/hall/shall
 	name = "\improper Perseverance Starboard Hallway"
 	icon_state = "hallA"
-	sound_env = SMALL_ENCLOSED
+	sound_env = LARGE_ENCLOSED
 
 /area/ship/perseverance/hall/ehall
 	name = "\improper Perseverance Aft Hallway"
 	icon_state = "hallC3"
-	sound_env = SMALL_ENCLOSED
+	sound_env = LARGE_ENCLOSED
+
+/area/ship/perseverance/hall/ehall/port
+	name = "\improper Perseverance Port Aft Hallway"
+	icon_state = "hallF"
+
+/area/ship/perseverance/hall/ehall/starboard
+	name = "\improper Perseverance Starboard Aft Hallway"
+	icon_state = "hallA"

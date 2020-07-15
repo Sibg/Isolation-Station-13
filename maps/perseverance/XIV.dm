@@ -18,6 +18,8 @@
 	#include "code/XIV_clothes.dm"
 	#include "code/XIV_atmos.dm"
 	#include "code/XIV_vent.dm"
+	#include "code/XIV_blackbox.dm"
+	#include "code/XIV_radiomodified.dm"
 
 	#include "Perseverance_1.dmm"
 	#include "Perseverance_2.dmm"
