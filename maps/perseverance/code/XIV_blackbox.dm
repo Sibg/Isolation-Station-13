@@ -1,4 +1,4 @@
-#define STATION_Z 2
+#define STATION_Z 1
 #define TELECOMM_Z 1
 
 /obj/machinery/telecomms/server/blackbox
@@ -108,7 +108,7 @@
 		log.name = "data packet ([md5(identifier)])"
 
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------//
 
 obj/machinery/computer/telecomms/server/blackbox
 	req_access = list()
