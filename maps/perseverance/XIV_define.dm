@@ -43,7 +43,7 @@
 	salary_modifier = 0.4
 
 
-//Images 2-4 are from starsector, image 1 I have no idea, couldn't really find who made it :I
+//Images 2-4 are from starsector, image 1 I have no idea, couldn't really find who made it, but it's def. Alien: Isolation themed
 	lobby_screens = list('maps/perseverance/lobby/Menu1.png', 'maps/perseverance/lobby/Menu2.jpg', 'maps/perseverance/lobby/Menu3.jpg', 'maps/perseverance/lobby/Menu4.jpg')
 	lobby_tracks = list(
 		/music_track/torch,

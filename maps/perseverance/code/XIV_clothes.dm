@@ -4,7 +4,7 @@
 
 /obj/item/clothing/under/XIV/xion
 	name = "xion jumpsuit"
-	desc = "A relatively cheap utility jumpsuit produced by Xion Industries."
+	desc = "A relatively protecive utility jumpsuit produced by Xion Industries."
 	icon_state = "xion"
 	item_state = "xion"
 	worn_state = "xionsuit_s"
@@ -15,7 +15,7 @@
 
 /obj/item/clothing/under/XIV/xionplus
 	name = "xion padded suit"
-	desc = "A special suit given to higher-ranking xion employees."
+	desc = "A special suit used by higher-ranking xion employees."
 	icon = 'maps/perseverance/icons/clothes/XIVunder.dmi'
 	icon_state = "manage"
 	item_state = "manage"
@@ -29,4 +29,4 @@
 		)
 
 /obj/item/clothing/under/rank/medical/XIV
-	name = "field medic's jumpsuit"
+	name = "field physicians jumpsuit"

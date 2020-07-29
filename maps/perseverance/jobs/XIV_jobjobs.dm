@@ -40,7 +40,7 @@
 	captain_announcement.Announce("All hands, [alt_title || title] [person.real_name] on deck!", new_sound = announce_sound)
 	..()
 
-//assistant manager
+//nav officer
 /datum/job/amanager
 	title = "Navigations Officer"
 	department = "Command"
@@ -78,7 +78,7 @@
 
 //doctor
 /datum/job/doctor
-	title = "Field Medic"
+	title = "Field Physician"
 	department = "Medical"
 	department_flag = MED
 	total_positions = 4
@@ -109,12 +109,12 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	skill_points = 20
+	skill_points = 22
 
 /datum/job/doctor/get_description_blurb()
-	return "You are the Field Medic, specialized in keeping your fellow cremembers operational. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Field Physician, specialized in keeping your fellow cremembers operational. You are subordinate to the Operations Manager and are expected to follow them."
 
-//fab tech
+//scientist
 /datum/job/science
 	title = "Scientist"
 	department = "Research"
@@ -124,7 +124,7 @@
 	supervisors = "the Expedition Leader and Navigation Officers"
 	selection_color = "#633d63"
 	economic_power = 3
-	skill_points = 18
+	skill_points = 22
 	ideal_character_age = 20
 	alt_titles = list()
 
@@ -142,15 +142,62 @@
 	access = list(access_XIV, access_research)
 
 /datum/job/science/get_description_blurb()
-	return "You are the Scientist, hired primarily to assist the rest of the crew in more scientific matters. You are subordinate to the Operations manager and are expected to follow them."
+	return "You are the Scientist, hired primarily to perform various onboard and offsite research and surveying operations. You are subordinate to the Operations manager and are expected to follow them."
 
-//Engineer
-/datum/job/engineer
-	title = "Engineering Technician"
+/datum/job/senior_engineer
+	title = "Systems Engineer"
 	department = "Engineering"
 	department_flag = ENG
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
+	hud_icon = "hudengineer"
+	supervisors = "the Expedition Leader and Navigation Officers"
+	selection_color = COLOR_DARK_BROWN
+	economic_power = 2
+	alt_titles = list()
+	minimal_player_age = 0
+	ideal_character_age = 24
+	outfit_type = /decl/hierarchy/outfit/job/isolation/senior_engineer
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/contractor
+	)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_CONSTRUCTION = SKILL_BASIC,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_BASIC,
+	                    SKILL_ENGINES      = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
+	skill_points = 18
+
+	access = list(access_XIV, access_engine_equip, access_tcomsat, access_network, access_engine, access_atmospherics)
+
+	software_on_spawn = list(/datum/computer_file/program/power_monitor,
+							 /datum/computer_file/program/supermatter_monitor,
+							 /datum/computer_file/program/alarm_monitor,
+							 /datum/computer_file/program/atmos_control,
+							 /datum/computer_file/program/rcon_console,
+							 /datum/computer_file/program/camera_monitor,
+							 /datum/computer_file/program/shields_monitor,
+							 /datum/computer_file/program/ntnetmonitor)
+
+/datum/job/engineer/get_description_blurb()
+	return "You are the Systems Engineer, your job is to keep the ship and various prototype systems from exploding. You are subordinate to the Operations Manager and are expected to follow them."
+
+//Techie
+/datum/job/engineer
+	title = "Ship Technician"
+	department = "Engineering"
+	department_flag = ENG
+	total_positions = 4
+	spawn_positions = 4
 	hud_icon = "hudengineer"
 	supervisors = "the Expedition Leader and Navigation Officers"
 	selection_color = COLOR_DARK_BROWN
@@ -178,7 +225,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 18
 
-	access = list(access_XIV, access_engine_equip, access_tcomsat, access_network, access_engine, access_atmospherics)
+	access = list(access_XIV, access_engine_equip, access_engine, access_atmospherics)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -186,11 +233,10 @@
 							 /datum/computer_file/program/atmos_control,
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
-							 /datum/computer_file/program/shields_monitor,
-							 /datum/computer_file/program/ntnetmonitor)
+							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/engineer/get_description_blurb()
-	return "You are the Engineeirng Techinican, your job is to keep the ship operational. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Ship Techinican, your job is to keep the ship operational, and clean. You are subordinate to the Operations Manager and are expected to follow them."
 
 //crewman
 /datum/job/assistant
@@ -213,7 +259,7 @@
 	access = list(access_XIV)
 	minimal_access = list()
 
-	skill_points = 15
+	skill_points = 18
 
 /datum/job/assistant/get_description_blurb()
 	return "You are the Crewman, your job is to aid other emplyees in whatever way you can. You are subordinate to the Operations Manager and are expected to follow them."

@@ -19,6 +19,15 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/weapon/card/id/XIV/amanager
 
+//senior engineer
+/decl/hierarchy/outfit/job/isolation/senior_engineer
+	name = OUTFIT_JOB_NAME("Systems Engineer")
+	uniform = /obj/item/clothing/under/XIV/xion
+	shoes = /obj/item/clothing/shoes/workboots
+	id_type = /obj/item/weapon/card/id/XIV/senior_engineer
+	gloves = /obj/item/clothing/gloves/thick/duty
+	belt = /obj/item/weapon/storage/belt/utility/full/XIV
+
 //engineer
 /decl/hierarchy/outfit/job/isolation/techie
 	name = OUTFIT_JOB_NAME("Engineering Technician")
