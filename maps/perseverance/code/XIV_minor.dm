@@ -1,5 +1,23 @@
 //all the minor overrides and some new stuff
 
+/decl/flooring/reinforced/redgrid//blackgrid is black instead of red and I have no idea why, but I'm not really willing to go diggin through this damned code to find out becauseIcouldntfinditafterafewhours
+	name = "processing strata"
+	icon = 'icons/turf/flooring/circuit.dmi'
+	icon_base = "rcircuit"
+	build_type = null
+	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_WRENCH
+	can_paint = 1
+	can_engrave = FALSE
+
+/turf/simulated/floor/redgrid
+	name = "mainframe floor"
+	icon = 'icons/turf/flooring/circuit.dmi'
+	icon_state = "rcircuit"
+	light_outer_range = 2
+	light_max_bright = 2
+	light_color = COLOR_RED
+	initial_flooring = /decl/flooring/reinforced/redgrid
+
 /obj/machinery/door/airlock/hatch/autoname/command
 	stripe_color = COLOR_COMMAND_BLUE
 
@@ -10,16 +28,25 @@
 	stripe_color = COLOR_AMBER
 
 /obj/machinery/door/airlock/autoname/atmos
+	door_color = COLOR_AMBER
 	stripe_color = COLOR_CYAN
 
 /obj/machinery/door/airlock/autoname/command
-	stripe_color = COLOR_COMMAND_BLUE
+	door_color = COLOR_COMMAND_BLUE
 
 /obj/machinery/door/airlock/autoname/civilian
 	stripe_color = COLOR_CIVIE_GREEN
 
 /obj/machinery/door/airlock/autoname/weapons
 	stripe_color = COLOR_RED
+
+/obj/machinery/door/airlock/autoname/supply
+	door_color = COLOR_PALE_ORANGE
+	stripe_color = COLOR_BEASTY_BROWN
+
+/obj/machinery/door/airlock/hatch/ventilation
+	name = "Ventilation Hatch"
+	stripe_color = COLOR_ORANGE
 
 // Autoname multitile glass airlocks
 /obj/machinery/door/airlock/multi_tile/glass/autoname
@@ -34,10 +61,23 @@
 	stripe_color = COLOR_RED
 
 /obj/machinery/door/airlock/multi_tile/glass/autoname/atmos
-	stripe_color = COLOR_CYAN // I kinda like this atmos, I dunno, might just change it later
+	door_color = COLOR_AMBER
+	stripe_color = COLOR_CYAN
 
 /obj/machinery/door/airlock/multi_tile/glass/autoname/civilian
 	stripe_color = COLOR_CIVIE_GREEN
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/medical
+	door_color = COLOR_WHITE
+	stripe_color = COLOR_DEEP_SKY_BLUE
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/supply
+	door_color = COLOR_PALE_ORANGE
+	stripe_color = COLOR_BEASTY_BROWN
+
+/obj/machinery/door/airlock/multi_tile/glass/autoname/command
+	door_color = COLOR_COMMAND_BLUE
+	stripe_color = COLOR_SKY_BLUE
 
 ///obj/machinery/computer
 //	icon = 'maps/perseverance/icons/obj/computer.dmi'
@@ -124,6 +164,15 @@
 
 // This one is for areas which would be painted over regularly (in view of people, etc.)
 
+/turf/simulated/wall/prepainted/white
+	paint_color = COLOR_WHITE
+
+/turf/simulated/wall/prepainted/hull
+	paint_color = COLOR_HULL
+
+/turf/simulated/wall/titanium/hull
+	paint_color = COLOR_HULL
+
 /turf/simulated/wall/r_wall/white
 	paint_color = COLOR_WHITE
 
@@ -139,7 +188,7 @@
 /turf/simulated/wall/ocp_wall/prepainted
 	paint_color = COLOR_GUNMETAL
 
-/obj/structure/closet/secure_closet/freezer/kitchen/XIV //really? REALLY? COME ON REALLY???
+/obj/structure/closet/secure_closet/freezer/kitchen/XIV
 	req_access = list()
 
 // This is for the multi-z gas tanks
@@ -156,29 +205,74 @@
 /turf/simulated/open/XIV/carbon_dioxide
 	initial_gas = list(GAS_CO2 = ATMOSTANK_CO2)
 
-/turf/simulated/open/XIV/airless //for the aft fuel bay
+/turf/simulated/open/XIV/airless//for the aft fuel bay
+	initial_gas = null
+
+/turf/simulated/floor/tiled/techfloor/grid/airless
 	initial_gas = null
 
 //SMES
+
+/obj/machinery/power/smes/buildable/preset/XIV
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
 
 // Main Engine output SMES, plus empty version
 /obj/machinery/power/smes/buildable/preset/XIV/engine_main
 	uncreated_component_parts = list(
 		/obj/item/weapon/stock_parts/smes_coil/super_io = 2,
 		/obj/item/weapon/stock_parts/smes_coil/super_capacity =	 1)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
 
 /obj/machinery/power/smes/buildable/preset/XIV/engine_main/empty
 	_fully_charged = FALSE
 
-// Main Engine internal SMES, for powering the gyrotron and the actual room, doesn't need super high capacity or I/O
+// Main Engine internal SMES, for powering the gyrotron and the actual room, doesn't need super high capacity, but it does need I/O
 /obj/machinery/power/smes/buildable/preset/XIV/engine_central
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
+	uncreated_component_parts = list(
+		/obj/item/weapon/stock_parts/smes_coil/super_io = 1)
+
+//Crates
+
+/obj/structure/closet/crate/actual_radiation_gear
+	name = "radioactive gear crate"
+	desc = "A crate with a radiation sign on it."
+	closet_appearance = /decl/closet_appearance/crate/radiation
+
+/obj/structure/closet/crate/actual_radiation_gear/WillContain()
+	return list(/obj/item/clothing/suit/radiation = 4,
+				/obj/item/clothing/head/radiation = 4) //other radiation closet only gives the suit ??? What???
+
+/obj/structure/closet/crate/fusion
+	name = "fusion fuel crate"
+	desc = "A crate with a radiation sign on it."
+	closet_appearance = /decl/closet_appearance/crate/radiation
+
+/obj/item/stack/material/deuterium/ten //needed for next part
+	amount = 10
+
+/obj/structure/closet/crate/fusion/WillContain()
+	return list(/obj/item/stack/material/deuterium/ten = 10,
+				/obj/item/stack/material/tritium/ten = 4)
+
+//Blue double emergency tank
+
+/obj/item/weapon/tank/emergency/oxygen/double/blue
+	icon = 'maps/perseverance/icons/obj/tanks.dmi'
+	icon_state = "emergency_double_blue"
+
+//The editor is annoying, I'm not using it anymore, dont really think doing this will cause many issues
+
+obj/machinery/conveyor/XIV/shuttletosci
+	id = "shuttletosci"
+
+obj/machinery/conveyor_switch/oneway/XIV/shuttletosci
+	id = "shuttletosci"
+
+obj/machinery/conveyor/XIV/scitoshuttle
+	id = "scitoshuttle"
+
+obj/machinery/conveyor_switch/oneway/XIV/scitoshuttle
+	id = "scitoshuttle"

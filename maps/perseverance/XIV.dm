@@ -1,5 +1,7 @@
+//Made by Domic(mapping, bad coding, spriting), additional credits to: Sibg (mapping) and DoctorDerp (spriting). If you have any questions or feedback, ping me on discord (Domic#7513)
+
 #if !defined(using_map_DATUM)
-//    #include "XIV_unit_testing.dm"
+    #include "XIV_unit_testing.dm"
 
     #include "XIV_areas.dm"
     #include "XIV_announcements.dm"
@@ -15,6 +17,10 @@
 	#include "code/XIV_minor.dm"
 	#include "code/XIV_clothes.dm"
 	#include "code/XIV_atmos.dm"
+	#include "code/XIV_vent.dm"
+	#include "code/XIV_blackbox.dm"
+	#include "code/XIV_radiomodified.dm"
+	#include "code/XIV_bsdrive.dm"
 
 	#include "Perseverance_1.dmm"
 	#include "Perseverance_2.dmm"

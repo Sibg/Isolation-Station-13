@@ -4,8 +4,10 @@
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
 
 /datum/map/isolation/get_map_info()
-	return "You're aboard the <b>[station_name],</b> an old but reliable frontier exploration frigate owned by Xion Industries sent out to locate new mining hotspots."
-	. +=  "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector."
+	. = list()
+	. += "You're aboard the <b>[station_name],</b> an old but reliable frontier exploration frigate owned by Xion Industries sent out to locate new mining hotspots and test experimental equipment."
+	. += "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector."
+	return jointext(., "<br>")
 
 /datum/map/isolation/send_welcome()
 	var/welcome_text = "<font size = 3><b>XIV Perseverance</b> Sensor Readings:</font><br>"
@@ -15,7 +17,7 @@
 	var/list/space_things = list()
 	var/obj/effect/overmap/visitable/torch = map_sectors["1"]
 
-	welcome_text += "Current Coordinates:<br /><b>10:10</b><br /><br>"
+	welcome_text += "Current Coordinates:<br /><b>[torch.x]:[torch.y]</b><br /><br>"//torch.x and torch.y do actually work, huh
 	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br /><br>"
 	welcome_text += "Travel time to Sol:<br /><b>[rand(15,45)] days</b><br /><br>"
 	welcome_text += "Time since last port visit:<br /><b>[rand(40,200)] days</b><br /><hr>"
