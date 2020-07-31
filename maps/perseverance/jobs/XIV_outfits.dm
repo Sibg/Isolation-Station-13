@@ -14,13 +14,14 @@
 
 //little boss
 /decl/hierarchy/outfit/job/isolation/amanager
-	name = OUTFIT_JOB_NAME("Assistant Manager")
+	name = OUTFIT_JOB_NAME("Navigations Officer")
 	uniform = /obj/item/clothing/under/XIV/xionplus
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/weapon/card/id/XIV/amanager
 
 //senior engineer
 /decl/hierarchy/outfit/job/isolation/senior_engineer
+	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	name = OUTFIT_JOB_NAME("Systems Engineer")
 	uniform = /obj/item/clothing/under/XIV/xion
 	shoes = /obj/item/clothing/shoes/workboots
@@ -28,8 +29,13 @@
 	gloves = /obj/item/clothing/gloves/thick/duty
 	belt = /obj/item/weapon/storage/belt/utility/full/XIV
 
+/decl/hierarchy/outfit/job/isolation/senior_engineer/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
+
 //engineer
 /decl/hierarchy/outfit/job/isolation/techie
+	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	name = OUTFIT_JOB_NAME("Engineering Technician")
 	uniform = /obj/item/clothing/under/XIV/xion
 	shoes = /obj/item/clothing/shoes/workboots
@@ -37,12 +43,20 @@
 	gloves = /obj/item/clothing/gloves/thick/duty
 	belt = /obj/item/weapon/storage/belt/utility/full/XIV
 
+/decl/hierarchy/outfit/job/isolation/techie/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
+
 //doctor
 /decl/hierarchy/outfit/job/isolation/doctor
 	name = OUTFIT_JOB_NAME("Field Medic")
 	uniform = /obj/item/clothing/under/rank/medical/XIV
 	shoes = /obj/item/clothing/shoes/white
 	id_type = /obj/item/weapon/card/id/XIV/doctor
+
+/decl/hierarchy/outfit/job/isolation/doctor/New()
+	..()
+	BACKPACK_OVERRIDE_MEDICAL
 
 //fabtec
 /decl/hierarchy/outfit/job/isolation/science

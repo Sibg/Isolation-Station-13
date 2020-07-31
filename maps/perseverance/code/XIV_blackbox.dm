@@ -1,10 +1,23 @@
 #define STATION_Z 1
 #define TELECOMM_Z 1
+//not sure if those two do anything
+
+/obj/item/weapon/stock_parts/circuitboard/telecomms/server/blackbox
+	origin_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 4, TECH_PHORON = 4)
+	req_components = list(
+							/obj/item/weapon/stock_parts/subspace/ansible = 1,
+							/obj/item/weapon/stock_parts/subspace/filter = 1,
+							/obj/item/weapon/stock_parts/subspace/treatment = 2,
+							/obj/item/weapon/stock_parts/subspace/analyzer = 1,
+							/obj/item/weapon/stock_parts/subspace/crystal = 1,
+							/obj/item/weapon/stock_parts/manipulator = 2,
+							/obj/item/stack/material/phoron = 6)
+//it's a complex device, I guess
 
 /obj/machinery/telecomms/server/blackbox
 	name = "Blackbox"
 	icon = 'maps/perseverance/icons/obj/blackbox.dmi'
-	icon_state = "blackbox"
+	icon_state = "blackbox"//the code switches this out with blackbox_off, too lazy to fix it tho
 	desc = "A sturdy machine which utilizes phoron to record subspace data without needing power, with a delay. It has been modified to interface with modern computers."
 	id = "Blackbox"
 	network = "Blackbox"
@@ -13,7 +26,7 @@
 	anchored = 1
 	idle_power_usage = 0
 	machinetype = 4
-	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/server
+	circuitboard = /obj/item/weapon/stock_parts/circuitboard/telecomms/server/blackbox
 	base_type = /obj/machinery/telecomms/server/blackbox
 	New()
 		for(var/i = PUBLIC_LOW_FREQ, i < PUBLIC_HIGH_FREQ, i += 2)

@@ -112,7 +112,7 @@
 	skill_points = 22
 
 /datum/job/doctor/get_description_blurb()
-	return "You are the Field Physician, specialized in keeping your fellow cremembers operational. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Field Physician, specialized in keeping your fellow cremembers operational. You are subordinate to the Expedition Leader and are expected to follow them."
 
 //scientist
 /datum/job/science
@@ -142,7 +142,7 @@
 	access = list(access_XIV, access_research)
 
 /datum/job/science/get_description_blurb()
-	return "You are the Scientist, hired primarily to perform various onboard and offsite research and surveying operations. You are subordinate to the Operations manager and are expected to follow them."
+	return "You are the Scientist, hired primarily to perform various onboard and offsite research and surveying operations. You are subordinate to the Expedition Leader and are expected to follow them."
 
 /datum/job/senior_engineer
 	title = "Systems Engineer"
@@ -189,7 +189,7 @@
 							 /datum/computer_file/program/ntnetmonitor)
 
 /datum/job/engineer/get_description_blurb()
-	return "You are the Systems Engineer, your job is to keep the ship and various prototype systems from exploding. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Systems Engineer, your job is to keep the ship and/or various prototype systems from exploding. You are subordinate to the Expedition Leader and are expected to follow them."
 
 //Techie
 /datum/job/engineer
@@ -236,7 +236,7 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/engineer/get_description_blurb()
-	return "You are the Ship Techinican, your job is to keep the ship operational, and clean. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Ship Techinican, your job is to keep the ship operational, and clean. You are subordinate to the Expedition Leader and are expected to follow them."
 
 //crewman
 /datum/job/assistant
@@ -262,7 +262,7 @@
 	skill_points = 18
 
 /datum/job/assistant/get_description_blurb()
-	return "You are the Crewman, your job is to aid other emplyees in whatever way you can. You are subordinate to the Operations Manager and are expected to follow them."
+	return "You are the Crewman, your job is to aid other emplyees in whatever way you can. You are subordinate to the Expedition Leader and are expected to follow them."
 
 /datum/job/ai
 	minimal_player_age = 7

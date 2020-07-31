@@ -188,7 +188,7 @@
 /turf/simulated/wall/ocp_wall/prepainted
 	paint_color = COLOR_GUNMETAL
 
-/obj/structure/closet/secure_closet/freezer/kitchen/XIV //really? REALLY? COME ON REALLY???
+/obj/structure/closet/secure_closet/freezer/kitchen/XIV
 	req_access = list()
 
 // This is for the multi-z gas tanks
@@ -205,7 +205,10 @@
 /turf/simulated/open/XIV/carbon_dioxide
 	initial_gas = list(GAS_CO2 = ATMOSTANK_CO2)
 
-/turf/simulated/open/XIV/airless //for the aft fuel bay
+/turf/simulated/open/XIV/airless//for the aft fuel bay
+	initial_gas = null
+
+/turf/simulated/floor/tiled/techfloor/grid/airless
 	initial_gas = null
 
 //SMES
@@ -259,3 +262,17 @@
 /obj/item/weapon/tank/emergency/oxygen/double/blue
 	icon = 'maps/perseverance/icons/obj/tanks.dmi'
 	icon_state = "emergency_double_blue"
+
+//The editor is annoying, I'm not using it anymore, dont really think doing this will cause many issues
+
+obj/machinery/conveyor/XIV/shuttletosci
+	id = "shuttletosci"
+
+obj/machinery/conveyor_switch/oneway/XIV/shuttletosci
+	id = "shuttletosci"
+
+obj/machinery/conveyor/XIV/scitoshuttle
+	id = "scitoshuttle"
+
+obj/machinery/conveyor_switch/oneway/XIV/scitoshuttle
+	id = "scitoshuttle"
